@@ -461,7 +461,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 20px 0; /* Further reduced padding */
   overflow: clip;
 }
 
@@ -470,15 +470,15 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 20px; /* Further reduced padding */
   position: relative;
 }
 
 .section-title h2 {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 10px; /* Reduced margin */
+  padding-bottom: 10px; /* Reduced padding */
   position: relative;
 }
 
@@ -519,7 +519,7 @@ section,
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/hero-bg.jpg') center center;
   background-size: cover;
-  padding: 100px 0;
+  padding: 60px 0; /* Further reduced padding */
   color: #ffffff;
   text-align: center;
 }
@@ -636,7 +636,7 @@ section,
 }
 
 .about .content ul li {
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Reduced margin */
   display: flex;
   align-items: center;
 }
@@ -744,11 +744,11 @@ section,
 .resume .resume-title {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Reduced margin */
 }
 
 .resume .resume-item {
-  margin-bottom: 40px;
+  margin-bottom: 20px; /* Reduced margin */
 }
 
 .resume .resume-item h4 {
@@ -790,7 +790,7 @@ section,
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Reduced margin */
 }
 
 .resume .resume-item {
