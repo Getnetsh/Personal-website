@@ -516,6 +516,37 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/hero-bg.jpg') center center;
+  background-size: cover;
+  padding: 100px 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.hero .social-links a {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.hero .social-links a:hover {
+  color: var(--accent-color);
+}
+
+.hero {
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -615,10 +646,20 @@ section,
 }
 
 .about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
+  font-size: 24px;
+  margin-right: 10px;
   color: var(--accent-color);
   line-height: 0;
+}
+
+.about .content ul a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.about .content ul a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
 /*--------------------------------------------------------------
@@ -700,6 +741,50 @@ section,
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
+.resume .resume-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.resume .resume-item {
+  margin-bottom: 40px;
+}
+
+.resume .resume-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.resume .resume-item p {
+  margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resume .resume-item ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+  color: var(--accent-color);
+}
+
 .resume .resume-title {
   color: var(--heading-color);
   font-size: 26px;
