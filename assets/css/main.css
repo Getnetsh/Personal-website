@@ -841,6 +841,37 @@ section,
   border: 2px solid var(--accent-color);
 }
 
+.resume .btn-primary {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: inline-block; /* Ensure the button is inline */
+  margin-top: 10px; /* Add some space above the button */
+}
+
+.resume .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.resume ul li a.btn-primary {
+  display: inline-block;
+  margin-top: 0; /* Remove top margin for alignment */
+}
+
+.resume .text-left {
+  text-align: left;
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.resume .text-left .btn-primary {
+  margin-left: 10px; /* Add some space to the left of the button */
+}
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
