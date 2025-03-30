@@ -933,6 +933,41 @@ section,
   }
 }
 
+/* Skills Section - Loading Animation */
+.skills .progress-bar {
+  height: 100%;
+  background: var(--accent-color);
+  width: 0; /* Start with 0 width */
+  animation: loading-animation 2s ease-in-out forwards; /* Add animation */
+}
+
+@keyframes loading-animation {
+  from {
+    width: 0; /* Start from 0% */
+  }
+  to {
+    width: var(--progress-width); /* Use custom width for each skill */
+  }
+}
+
+/* Skills Section - Gradient Shader */
+.skills .progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #ff9800); /* Green to Orange Gradient */
+  width: 0; /* Start with 0 width */
+  animation: loading-animation 2s ease-in-out forwards; /* Smooth loading animation */
+  border-radius: 5px; /* Rounded corners */
+}
+
+@keyframes loading-animation {
+  from {
+    width: 0; /* Start from 0% */
+  }
+  to {
+    width: var(--progress-width); /* Use custom width for each skill */
+  }
+}
+
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
