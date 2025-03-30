@@ -2,9 +2,26 @@
 * Template Name: MyResume
 * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
 * Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+
 */
+
+/*--------------------------------------------------------------
+# Global Variables
+--------------------------------------------------------------*/
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+
+  --background-color: #f0f0f0; /* Light grey background */
+  --default-color: #333333; /* Dark grey text */
+  --heading-color: #1a1a1a; /* Darker grey for headings */
+  --accent-color: #007bff; /* Blue accent color */
+  --secondary-accent-color: #ff5722; /* Orange accent color */
+  --surface-color: #ffffff; /* White for surfaces */
+  --contrast-color: #ffffff; /* White for text on dark backgrounds */
+  --hover-color: #388e3c; /* Darker green for hover effects */
+}
 
 /*--------------------------------------------------------------
 # Font & Color Variables
@@ -64,17 +81,17 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  scroll-behavior: smooth;
 }
 
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
-  text-decoration: none;
+  color: var(--secondary-accent-color);
 }
 
 h1,
@@ -276,16 +293,37 @@ h6 {
   display: block;
 }
 
+.navmenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navmenu a {
+  color: var(--default-color);
+  font-family: var(--nav-font);
+  padding: 10px 18px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  border-radius: 50px;
+  background: var(--surface-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navmenu a:hover {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
+  background: var(--background-color);
   color: var(--default-color);
-  background-color: var(--background-color);
-  font-size: 14px;
+  padding: 40px 0;
   text-align: center;
-  padding: 30px 0;
-  position: relative;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer h3 {
@@ -308,24 +346,15 @@ h6 {
 }
 
 .footer .social-links a {
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  line-height: 1;
-  margin: 0 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
+  font-size: 18px;
+  margin: 0 10px;
+  color: var(--default-color);
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer .social-links a:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  text-decoration: none;
+  color: var(--accent-color);
+  transform: scale(1.2);
 }
 
 .footer .copyright {
@@ -336,6 +365,25 @@ h6 {
 .footer .credits {
   font-size: 13px;
   padding-top: 5px;
+}
+
+.footer {
+  background: var(--heading-color);
+  color: var(--contrast-color);
+  padding: 20px 0; /* Reduced padding */
+  text-align: center;
+}
+
+.footer .social-links a {
+  font-size: 18px;
+  margin: 0 10px;
+  color: var(--contrast-color);
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
 }
 
 /*--------------------------------------------------------------
@@ -461,8 +509,22 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0; /* Further reduced padding */
-  overflow: clip;
+  padding: 20px 0; /* Reduced padding */
+  margin: 0; /* Remove unnecessary margins */
+  overflow: hidden;
+}
+
+/* Gradient Backgrounds */
+.section {
+  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+}
+
+/* Gradient Backgrounds */
+.gradient-background {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -470,16 +532,35 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 20px; /* Further reduced padding */
-  position: relative;
+  padding-bottom: 10px; /* Reduced padding */
+  margin-bottom: 15px; /* Reduced margin */
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 32px; /* Slightly smaller font size */
   font-weight: 700;
   margin-bottom: 10px; /* Reduced margin */
-  padding-bottom: 10px; /* Reduced padding */
-  position: relative;
+  color: var(--heading-color);
+}
+
+.section-title h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-color);
+  margin: 10px auto 0;
+  border-radius: 2px;
+  animation: slide-in 0.5s ease-in-out;
+}
+
+@keyframes slide-in {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
 }
 
 .section-title h2:before {
@@ -501,7 +582,7 @@ section,
   display: block;
   width: 60px;
   height: 3px;
-  background: var(--accent-color);
+  background: var (--accent-color);
   left: 0;
   right: 0;
   bottom: 0;
@@ -512,13 +593,46 @@ section,
   margin-bottom: 0;
 }
 
+.section {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, var(--surface-color) 0%, var(--background-color) 100%);
+  border-radius: 10px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--heading-color);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-color);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
+  padding: 60px 0; /* Reduced padding */
+  text-align: center;
+}
+
+.hero {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/hero-bg.jpg') center center;
-  background-size: cover;
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('assets/img/hero-bg.jpg') center center / cover no-repeat;
   padding: 60px 0; /* Further reduced padding */
   color: #ffffff;
   text-align: center;
@@ -622,6 +736,34 @@ section,
   }
 }
 
+.hero {
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('assets/img/hero-bg.jpg') center center / cover no-repeat;
+  color: var(--contrast-color);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.hero .social-links a {
+  font-size: 20px;
+  color: var(--contrast-color);
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.hero .social-links a:hover {
+  color: var(--accent-color);
+}
+
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -636,7 +778,7 @@ section,
 }
 
 .about .content ul li {
-  margin-bottom: 10px; /* Reduced margin */
+  margin-bottom: 8px; /* Reduced margin between list items */
   display: flex;
   align-items: center;
 }
@@ -709,6 +851,7 @@ section,
   display: block;
   background: none;
   border-radius: 0;
+  margin-bottom: 10px; /* Reduced margin */
 }
 
 .skills .progress .skill {
@@ -738,17 +881,69 @@ section,
   background-color: var(--accent-color);
 }
 
+/* Resume and Skills Card Styling */
+.resume-item,
+.skills .progress {
+  background: var(--surface-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-item:hover,
+.skills .progress:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Animation */
+.resume-item ul li i,
+.skills .progress .skill .val {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.resume-item ul li i:hover,
+.skills .progress .skill .val:hover {
+  transform: scale(1.2);
+  color: var(--accent-color);
+}
+
+.skills .progress {
+  background: var(--surface-color);
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.skills .progress-bar {
+  height: 100%;
+  background: var(--accent-color);
+  width: 0;
+  animation: progress-animation 2s ease-in-out forwards;
+}
+
+@keyframes progress-animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%; /* Adjust this value for each progress bar */
+  }
+}
+
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
 .resume .resume-title {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 10px; /* Reduced margin */
+  margin-bottom: 15px; /* Reduced margin */
 }
 
 .resume .resume-item {
-  margin-bottom: 20px; /* Reduced margin */
+  margin-bottom: 10px; /* Reduced margin */
 }
 
 .resume .resume-item h4 {
@@ -771,18 +966,19 @@ section,
 .resume .resume-item ul {
   list-style: none;
   padding: 0;
+  padding-left: 15px; /* Reduced padding */
 }
 
 .resume .resume-item ul li {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Reduced margin between list items */
 }
 
 .resume .resume-item ul li i {
   font-size: 20px;
   margin-right: 10px;
-  color: var(--accent-color);
+  color: var (--accent-color);
 }
 
 .resume .resume-title {
@@ -790,7 +986,7 @@ section,
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
-  margin-bottom: 10px; /* Reduced margin */
+  margin-bottom: 15px; /* Reduced margin */
 }
 
 .resume .resume-item {
@@ -850,7 +1046,7 @@ section,
   border-radius: 5px;
   transition: background-color 0.3s;
   display: inline-block; /* Ensure the button is inline */
-  margin-top: 10px; /* Add some space above the button */
+  margin-top: 5px; /* Reduced space above the button */
 }
 
 .resume .btn-primary:hover {
@@ -870,6 +1066,50 @@ section,
 
 .resume .text-left .btn-primary {
   margin-left: 10px; /* Add some space to the left of the button */
+}
+
+/* Modern Button Styling */
+.btn-primary {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.resume .resume-item {
+  background: var(--surface-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume .resume-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.resume .resume-item ul li i {
+  color: var(--accent-color);
+  margin-right: 10px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.resume .resume-item ul li i:hover {
+  color: var(--secondary-accent-color);
+  transform: scale(1.2);
 }
 
 /*--------------------------------------------------------------
@@ -920,6 +1160,29 @@ section,
 .portfolio .portfolio-item {
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio .portfolio-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1;
 }
 
 .portfolio .portfolio-item .portfolio-info {
@@ -1181,6 +1444,30 @@ section,
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
+}
+
+.testimonials .testimonial-item {
+  background: var(--surface-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonials .testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.testimonials .testimonial-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.testimonials .testimonial-item p {
+  font-style: italic;
+  color: var(--default-color);
 }
 
 /*--------------------------------------------------------------
@@ -1572,4 +1859,33 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/* Glassmorphism Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Links Styling */
+.social-links a {
+  font-size: 24px; /* Adjust icon size */
+  color: var(--default-color);
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2); /* Slightly enlarge on hover */
 }
