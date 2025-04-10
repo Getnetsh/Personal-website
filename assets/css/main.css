@@ -13,14 +13,15 @@
   --heading-font: "Raleway", sans-serif;
   --nav-font: "Poppins", sans-serif;
 
-  --background-color: #f0f0f0; /* Light grey background */
+  --background-color: #F5F5F5; /* Light grey background */
   --default-color: #333333; /* Dark grey text */
-  --heading-color: #1a1a1a; /* Darker grey for headings */
-  --accent-color: #007bff; /* Blue accent color */
-  --secondary-accent-color: #ff5722; /* Orange accent color */
-  --surface-color: #ffffff; /* White for surfaces */
-  --contrast-color: #ffffff; /* White for text on dark backgrounds */
-  --hover-color: #388e3c; /* Darker green for hover effects */
+  --heading-color: #1A1A1A; /* Darker grey for headings */
+  --accent-color: #4CAF50; /* Green accent color */
+  --secondary-accent-color: #FF5722; /* Orange accent color */
+  --surface-color: #FFFFFF; /* White for surfaces */
+  --contrast-color: #FFFFFF; /* White for text on dark backgrounds */
+  --hover-color: #388E3C; /* Darker green for hover effects */
+  --highlight-color: #FFD700; /* Gold for highlights */
 }
 
 /*--------------------------------------------------------------
@@ -319,11 +320,10 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  background: var(--background-color);
-  color: var(--default-color);
-  padding: 40px 0;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  color: var(--contrast-color);
+  padding: 40px 20px;
   text-align: center;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer h3 {
@@ -348,7 +348,7 @@ h6 {
 .footer .social-links a {
   font-size: 18px;
   margin: 0 10px;
-  color: var(--default-color);
+  color: var(--contrast-color);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -365,25 +365,6 @@ h6 {
 .footer .credits {
   font-size: 13px;
   padding-top: 5px;
-}
-
-.footer {
-  background: var(--heading-color);
-  color: var(--contrast-color);
-  padding: 20px 0; /* Reduced padding */
-  text-align: center;
-}
-
-.footer .social-links a {
-  font-size: 18px;
-  margin: 0 10px;
-  color: var(--contrast-color);
-  transition: color 0.3s, transform 0.3s;
-}
-
-.footer .social-links a:hover {
-  color: var(--accent-color);
-  transform: scale(1.2);
 }
 
 /*--------------------------------------------------------------
@@ -737,7 +718,8 @@ section,
 }
 
 .hero {
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('assets/img/hero-bg.jpg') center center / cover no-repeat;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(76, 175, 80, 0.6)), 
+              url('assets/img/hero-bg.jpg') center center / cover no-repeat;
   color: var(--contrast-color);
   text-align: center;
   padding: 80px 20px;
@@ -953,7 +935,7 @@ section,
 /* Skills Section - Gradient Shader */
 .skills .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #4caf50, #ff9800); /* Green to Orange Gradient */
+  background: linear-gradient(90deg, #4CAF50, #FF9800); /* Green to Orange Gradient */
   width: 0; /* Start with 0 width */
   animation: loading-animation 2s ease-in-out forwards; /* Smooth loading animation */
   border-radius: 5px; /* Rounded corners */
